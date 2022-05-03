@@ -1,0 +1,49 @@
+/* input box */
+body {
+margin: 0;
+}
+input[type="text"] {
+background-color: #000;
+}
+.DateInput_input {
+    color: #fff;
+}
+
+.DateRangePickerInput {
+    background-color: #000;
+}
+
+.DateRangePickerInput_arrow_svg path {
+    fill: #fff;
+}
+
+.DateRangePickerInput_clearDates_svg path {
+    fill: #fff;
+}
+
+.DateRangePickerInput_clearDates {
+margin: 0;
+padding: 8px;
+}
+
+.Select-control {
+    background-color: black;
+}
+
+
+/* changes the text color of input box */
+.Select-value-label {
+    color: white !important;
+}
+
+.Select--single > .Select-control .Select-value, .Select-placeholder {
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+
+/* dropdown menu options */
+.VirtualizedSelectOption {
+    background-color: black;
+    color: white;
+ }
