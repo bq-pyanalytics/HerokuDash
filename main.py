@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import dash, os
+import dash
 from dash import dcc
 from dash import html
 import plotly.graph_objs as go
@@ -305,7 +305,5 @@ def update_figures(start_date, end_date, drop_values, check_values):
     )
 
 
-if os.environ.get('APP_LOCATION') == 'heroku':
-    app.run_server(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
-else:
-    app.run_server(host='localhost', port=8080, debug=True)
+if __name__ == '__main__':
+    app.run_server(debug=True)
