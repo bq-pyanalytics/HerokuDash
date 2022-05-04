@@ -276,16 +276,19 @@ def update_figures(start_date, end_date, drop_values, check_values):
                                       (analytics["utm_source"].isin(drop_values)) &
                                       (analytics["utm_medium"].isin(check_values))]
 
+    analytics_with_filter = analytics_with_filter.groupby("utm_source")[["order_sum", "order_amount"]].sum()\
+        .reset_index()
+
     # формируем графики для отрисовки с учётом фильтров
     data = [go.Bar(x=analytics_with_filter['utm_source'],
                    y=analytics_with_filter['order_sum'],
                    textposition='auto',
                    name='Сельское население'),
-            # go.Scatter(x=analytics_with_filter['utm_source'],
-            #            y=analytics_with_filter['order_sum'],
-            #            mode='lines+markers',
-            #            marker_color='crimson',
-            #            name='sin(x)'),
+            go.Scatter(x=analytics_with_filter['utm_source'],
+                       y=analytics_with_filter['order_amount'],
+                       mode='lines+markers',
+                       marker_color='crimson',
+                       name='sin(x)'),
             ]
 
     # формируем результат для отображения
